@@ -1,0 +1,40 @@
+==1488== Memcheck, a memory error detector
+==1488== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==1488== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==1488== Command: ./deck original.deck shuffled.deck
+==1488== 
+==1488== Invalid read of size 4
+==1488==    at 0x4E994CC: vfprintf (vfprintf.c:1283)
+==1488==    by 0x4EA2F43: fprintf (fprintf.c:32)
+==1488==    by 0x108F97: print_to_file (in /home/runner/Assignment2/deck)
+==1488==    by 0x1089CE: main (in /home/runner/Assignment2/deck)
+==1488==  Address 0xc0 is not stack'd, malloc'd or (recently) free'd
+==1488== 
+==1488== 
+==1488== Process terminating with default action of signal 11 (SIGSEGV): dumping core
+==1488==  Access not within mapped region at address 0xC0
+==1488==    at 0x4E994CC: vfprintf (vfprintf.c:1283)
+==1488==    by 0x4EA2F43: fprintf (fprintf.c:32)
+==1488==    by 0x108F97: print_to_file (in /home/runner/Assignment2/deck)
+==1488==    by 0x1089CE: main (in /home/runner/Assignment2/deck)
+==1488==  If you believe this happened as a result of a stack
+==1488==  overflow in your program's main thread (unlikely but
+==1488==  possible), you can try to increase the size of the
+==1488==  main thread stack using the --main-stacksize= flag.
+==1488==  The main thread stack size used in this run was 8388608.
+==1488== 
+==1488== HEAP SUMMARY:
+==1488==     in use at exit: 1,248 bytes in 1 blocks
+==1488==   total heap usage: 3 allocs, 2 frees, 2,824 bytes allocated
+==1488== 
+==1488== LEAK SUMMARY:
+==1488==    definitely lost: 0 bytes in 0 blocks
+==1488==    indirectly lost: 0 bytes in 0 blocks
+==1488==      possibly lost: 0 bytes in 0 blocks
+==1488==    still reachable: 1,248 bytes in 1 blocks
+==1488==         suppressed: 0 bytes in 0 blocks
+==1488== Reachable blocks (those to which a pointer was found) are not shown.
+==1488== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==1488== 
+==1488== For counts of detected and suppressed errors, rerun with: -v
+==1488== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
